@@ -4,10 +4,10 @@ import {
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import './home.html';
+import './managementRegistrations.html';
 
-Template.menuAdmin.events({
+Template.detailSeminaris.events({
     "click button"() {
-        Router.go('homeAdmin');
+        Router.go('daftarSeminaris');
     }
 });

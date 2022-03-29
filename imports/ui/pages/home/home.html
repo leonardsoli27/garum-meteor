@@ -1,18 +1,127 @@
 <template name="homeAdmin">
     <div class="container">
-        <img class="logo-home" src="public/img/logo_seminari.png" alt="">
-        <div class="row">
-            <div class="col-lg-7">
-                <h2>Selamat Datang </h2>
-            </div>
-        </div>
 
+        <img class="logo-home" src="/img/logo_seminari.png" alt="Cek">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Seminari St. Vincentius A Paulo Garum</h1>
-                <button class="btn btn-primary">Presensi Calon Seminaris</button>
+                <div class="text-judul">
+                    <h2 class="judul1">Selamat Datang</h2>
+                    <h1 class="judul2">Seminari St. Vincentius A Paulo Garum</h1>
+                </div>
+                <a href="{{ pathFor route='menuAdmin' }}"><button class="btn btn-presensi btn-primary">Presensi Calon
+                        Seminaris</button></a>
             </div>
         </div>
     </div>
-    .
+
+</template>
+
+<template name="navbar">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GARUM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ pathFor route='menuAdmin' }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</template>
+
+<template name="footer">
+    <!-- ../assets/dist/js/bootstrap.bundle.min.js -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+        </footer>
+    </div>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</template>
+
+<template name="menuAdmin">
+    {{>navbar}}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <tr>
+                        <th scope="col">Peserta</th>
+                    </tr>
+                    <tr>
+                        <a href="{{ pathFor route='daftarSeminaris' }}">
+                            <td>Daftar Peserta</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <a href="{{ pathFor route='gateKeeping' }}">
+                            <td>Cek Kehadiran Seminaris</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <th scope="col">TES</th>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Daftar Hasil Tes</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Input Hasil Tes</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <th scope="col">Wawancara</th>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Daftar Wawancara</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Input Jadwal Wawancara</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <th scope="col">Pengguna</th>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Daftar Pengguna</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <a href="">
+                            <td>Tambah Pengguna</td>
+                        </a>
+                    </tr>
+
+                </table>
+                <button class="btn btn-danger btn-sm">Kembali</button>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
 </template>

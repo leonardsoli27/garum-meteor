@@ -1,0 +1,44 @@
+<template name="gateKeeping">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Cek Kehadiran Calon Seminaris</h1>
+        <div class="row g-3 mt-4 align-items-center">
+            <div class="col-auto">
+                <input type="nama" id="nama" class="form-control" placeholder="Siapa Namanya?">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary">Cari</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">No PSB</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Asal Paroki</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td><span class="badge rounded-pill bg-success">Hadir</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td><span class="badge rounded-pill bg-success">Hadir</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    {{>footer}}
+</template>
