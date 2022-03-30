@@ -17,7 +17,7 @@
                     <tbody>
                         {{#each seminaris}}
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{ _id }}</th>
                             <td>{{ name }}</td>
                             <td>{{ parokiId }}</td>
                             <td>{{ status }}</td>
@@ -57,23 +57,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- {{#each detailSeminaris }}
                             <tr>
                                 <td>1</td>
-                                <td>Mark</td>
+                                <td>{{ name }}</td>
                                 <td>Otto</td>
                                 <td>asdasda</td>
                                 <td>Mark</td>
                                 <td>Otto</td>
                             </tr>
+                            {{/eact}} -->
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-lg-3 mt-4">
+            <!-- <div class="col-lg-3 mt-4">
                 <div class="card" style="width: 12rem;">
                     <img src="/img/logo_seminari.png" class="card-img-top" alt="...">
                 </div>
-            </div>
+            </div> -->
         </div>
         <button class="btn btn-danger btn-sm mt-4">Kembali</button>
     </div>

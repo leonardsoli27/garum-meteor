@@ -7,7 +7,7 @@
                 <input type="nama" id="nama" class="form-control" placeholder="Siapa Namanya?">
             </div>
             <div class="col-auto">
-                <button class="btn btn-primary" id="cari">Cari</button>
+                <button class="btn btn-primary">Cari</button>
             </div>
         </div>
         <div class="row mt-4">
@@ -22,18 +22,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each daftarHadir }}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <th scope="row">{{ _id }}</th>
+                            <td>{{ name }}</td>
+                            <td>{{ parokiId }}</td>
                             <td><span class="badge rounded-pill bg-success">Hadir</span></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td><span class="badge rounded-pill bg-success">Hadir</span></td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>

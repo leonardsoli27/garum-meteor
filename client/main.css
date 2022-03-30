@@ -8,7 +8,7 @@ body {
   max-width: 300px;
   height: auto;
   position: absolute;
-  margin-top: 200px;
+  margin-top: 170px;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -25,12 +25,12 @@ a {
 .text-judul {
   position: relative;
   text-align: center;
-  margin-top: 370px;
+  margin-top: 340px;
 }
 
 .btn-presensi {
   position: relative;
-  margin-top: 50px;
+  margin-top: 30px;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

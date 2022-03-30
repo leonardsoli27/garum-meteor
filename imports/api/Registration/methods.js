@@ -62,14 +62,21 @@ Meteor.methods({
         });
     },
 
+    "seminaris.daftar"() {
+        return SchoolRegistrationsCollection.find({});
+        // console.log(SchoolRegistrationsCollection.find({}));
+    },
 
     "seminaris.getDetail"(seminarisId) {
         check(seminarisId, String);
 
-        // console.log(seminarisId);
-        if (!this.seminarisId) {
+        if (!this.seminarisId == 0) {
             throw new Meteor.Error("Seminaris Tidak Terdaftar");
         }
+
+        // console.log(SchoolRegistrationsCollection.findOne({
+        //     _id: seminarisId,
+        // }));
 
         return SchoolRegistrationsCollection.findOne({
             _id: seminarisId,

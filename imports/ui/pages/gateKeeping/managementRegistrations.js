@@ -24,7 +24,8 @@ Template.detailSeminaris.onCreated(function () {
     Meteor.call("seminaris.getDetail", id_seminaris, function (error, result) {
         if (result) {
             // self.seminarisDetail.set(result);
-            console.log(self.seminarisDetail.set(result));
+            // console.log(self.seminarisDetail.get(result));
+            // console.log(result);
         } else {
             console.log(error);
         }
@@ -39,7 +40,11 @@ Template.detailSeminaris.events({
 
 Template.daftarSeminaris.onCreated(function () {
     this.state = new ReactiveDict();
-    // Meteor.call("seminaris.daftar");
+    // Meteor.call("seminaris.daftar", function (error, result) {
+    //     if (error) {
+    //         alert("Data Tidak Ada");
+    //     }
+    // });
 });
 
 Template.daftarSeminaris.events({
@@ -51,5 +56,6 @@ Template.daftarSeminaris.events({
 Template.daftarSeminaris.helpers({
     seminaris() {
         return SchoolRegistrationsCollection.find({});
+        // console.log(SchoolRegistrationsCollection.find());
     },
 });
