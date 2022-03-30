@@ -1,6 +1,6 @@
 <template name="homeAdmin">
     <div class="container">
-
+        {{>navbar  }}
         <img class="logo-home" src="/img/logo_seminari.png" alt="Cek">
         <div class="row">
             <div class="col-lg-12">
@@ -8,7 +8,7 @@
                     <h2 class="judul1">Selamat Datang</h2>
                     <h1 class="judul2">Seminari St. Vincentius A Paulo Garum</h1>
                 </div>
-                <a href="{{ pathFor route='menuAdmin' }}"><button class="btn btn-presensi btn-primary">Presensi Calon
+                <a href="{{ pathFor route='gateKeeping' }}"><button class="btn btn-presensi btn-primary">Presensi Calon
                         Seminaris</button></a>
             </div>
         </div>
@@ -19,24 +19,10 @@
 <template name="navbar">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">GARUM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><b>GARUM</b></a>
+            <a href="{{ pathFor route='menuAdmin' }}" class="btn btn-primary menu">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ pathFor route='menuAdmin' }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Disabled</a>
-                    </li>
-                </ul>
-            </div>
+            </a>
         </div>
     </nav>
 
@@ -62,64 +48,47 @@
 <template name="menuAdmin">
     {{>navbar}}
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
+            <h3></h3>
             <div class="col-lg-12">
-                <table class="table">
-                    <tr>
-                        <th scope="col">Peserta</th>
-                    </tr>
-                    <tr>
-                        <a href="{{ pathFor route='daftarSeminaris' }}">
-                            <td>Daftar Peserta</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <a href="{{ pathFor route='gateKeeping' }}">
-                            <td>Cek Kehadiran Seminaris</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <th scope="col">TES</th>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Daftar Hasil Tes</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Input Hasil Tes</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <th scope="col">Wawancara</th>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Daftar Wawancara</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Input Jadwal Wawancara</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <th scope="col">Pengguna</th>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Daftar Pengguna</td>
-                        </a>
-                    </tr>
-                    <tr>
-                        <a href="">
-                            <td>Tambah Pengguna</td>
-                        </a>
-                    </tr>
-
-                </table>
-                <button class="btn btn-danger btn-sm">Kembali</button>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Peserta
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Hasil Tes
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Input Hasil Tes
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Wawancara
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Input Jadwal Wawancara
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Pengguna
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Tambah Pengguna
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <button class="btn btn-danger btn-sm mt-2">Kembali</button>
+                </div>
             </div>
         </div>
     </div>

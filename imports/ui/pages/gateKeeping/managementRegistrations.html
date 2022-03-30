@@ -15,29 +15,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each seminaris}}
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{ name }}</td>
+                            <td>{{ parokiId }}</td>
+                            <td>{{ status }}</td>
                             <td>
-                                <a href="{{ pathFor route='detailSeminaris' }}">
-                                    <span class="badge rounded-pill bg-primary">Detail</span>
+                                <a href="{{ pathFor route='detailSeminaris' _id=_id }}">
+                                    <span class="badge detail rounded-pill bg-primary">Detail</span>
                                 </a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><a href=""><span class="badge rounded-pill bg-primary">Detail</span></a></td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <button class="btn btn-danger btn-sm">Kembali</button>
     </div>
     {{>footer}}
 </template>
@@ -48,7 +44,7 @@
         <h1 class="text-center">Nama Calon Seminaris</h1>
         <div class="row mt-4">
             <div class="col-lg-9">
-                <div class="table">
+                <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -73,13 +69,9 @@
                     </table>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mt-4">
                 <div class="card" style="width: 12rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
+                    <img src="/img/logo_seminari.png" class="card-img-top" alt="...">
                 </div>
             </div>
         </div>
