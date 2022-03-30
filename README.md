@@ -1,3 +1,4 @@
 # garum-meteor
 
-1. Pembuatan Inputan
+1. Menampilkan Detail Seminaris
+2. Update kehadiran seminaris 
