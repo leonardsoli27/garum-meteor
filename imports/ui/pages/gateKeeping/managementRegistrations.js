@@ -25,7 +25,7 @@ Template.detailSeminaris.onCreated(function () {
         if (result) {
             // self.seminarisDetail.set(result);
             // console.log(self.seminarisDetail.get(result));
-            // console.log(result);
+            console.log(result);
         } else {
             console.log(error);
         }
