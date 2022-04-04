@@ -1,0 +1,261 @@
+<template name="daftarSeminaris">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Daftar Calon Seminaris</h1>
+        <div class="row mt-4">
+            <div class="table table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">No PSB</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Asal Paroki</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each seminaris}}
+                        <tr>
+                            <th scope="row">{{ _id }}</th>
+                            <td>{{ name }}</td>
+                            <td>{{ parokiId }}</td>
+                            <td>{{ status }}</td>
+                            <td>
+                                <a href="{{ pathFor route='detailSeminaris' _id=_id }}">
+                                    <span class="badge detail rounded-pill bg-primary">Detail</span>
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="detailSeminaris">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">{{seminari.name}}</h1>
+        <div class="row mt-4">
+            <div class="col-lg">
+                <div class="table-responsive">
+                    <table class="table table-hover table-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data Diri</th>
+                                <th scope="col">Data Nomor Identitas</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Formatio</th>
+                                <th scope="col">Keluarga</th>
+                                <th scope="col">Dokumen Pendukung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- {{#each detailSeminaris }}
+            <tr>
+                <td>1</td>
+                <td>{{ name }}</td>
+                <td>Otto</td>
+                <td>asdasda</td>
+                <td>Mark</td>
+                <td>Otto</td>
+            </tr>
+            {{/eact}} -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-3 mb-4">
+                <div class="card" style="width: 12rem;">
+                    <img src="/img/logo_seminari.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-auto align-self-center">
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="text-center"><b>Data Diri</b></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>: {{ seminari.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat Lahir</td>
+                                <td>: {{ seminari.placeOfBirth }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Lahir</td>
+                                <td>: {{ seminari.dateOfBirth }} </td>
+                            </tr>
+                            <tr>
+                                <td> No Telpon</td>
+                                <td>: {{ seminari.contactPerson.telepon }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Handphone</td>
+                                <td>: {{ seminari.contactPerson.telepon }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>: {{ seminari.contactPerson.email }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="text-center"><b>Nomor Identitas</b></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>No Induk Siswa Nasional</td>
+                                <td>: {{ seminari.identityId.nisn }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Pokok Sekolah Nasional</td>
+                                <td>: {{ seminari.identityId.npsn }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Induk Kependudukan</td>
+                                <td>: {{ seminari.identityId.nik }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Kartu Keluarga</td>
+                                <td>: {{ seminari.identityId.kk }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Kartu Keluarga Istimewa</td>
+                                <td>: {{ seminari.identityId.kks }}</td>
+                            </tr>
+                            <tr>
+                                <td>No Kartu Perlindungan Sosial</td>
+                                <td>: {{ seminari.identityId.kpsBpjs }}</td>
+                            </tr>
+                            <tr>
+                                <td> No Registrasi Akte Kelahiran</td>
+                                <td>: {{ seminari.identityId.akta }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="text-center"><b>Data Tempat Tinggal</b></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Alamat Saat ini</td>
+                                <td>: {{ seminari.address.street }}</td>
+                            </tr>
+                            <tr>
+                                <td> Dusun/Desa/Kelurahan</td>
+                                <td>: {{ seminari.address.dusun }} / {{ seminari.address.desa }}</td>
+                            </tr>
+                            <tr>
+                                <td> RT / RW</td>
+                                <td>: {{ seminari.address.rt }} / {{ seminari.address.rw }}</td>
+                            </tr>
+                            <tr>
+                                <td>Kecamatan</td>
+                                <td>: {{ seminari.address.kecamatan }}</td>
+                            </tr>
+                            <tr>
+                                <td>Kabupaten</td>
+                                <td>: {{ seminari.address.kabupaten }}</td>
+                            </tr>
+                            <tr>
+                                <td>Provinsi</td>
+                                <td>: {{ seminari.address.provinsi }}</td>
+                            </tr>
+                            <tr>
+                                <td>Kode Pos</td>
+                                <td>: {{ seminari.address.kode_pos }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="text-center"><b>Formatio</b></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nama Baptis</td>
+                                <td>: {{ seminari.formation.baptist.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Paroki Tempat Baptis</td>
+                                <td>: {{ seminari.formation.baptist.place }}</td>
+                            </tr>
+                            <tr>
+                                <td> Tanggal Baptis</td>
+                                <td>: {{ seminari.formation.baptist.date }}</td>
+                            </tr>
+                            <tr>
+                                <td> Nama Krisma</td>
+                                <td>: {{ seminari.formation.chrism.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Paroki Tempat Krisma</td>
+                                <td>: {{ seminari.formation.chrism.place }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Krisma</td>
+                                <td>: {{ seminari.formation.chrism.date }}</td>
+                            </tr>
+                            <tr>
+                                <td> Nama Paroki Asal</td>
+                                <td>: {{ seminari.formation.chrism.place }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Stasi / Lingkungan Awal : </td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td>Alamat Paroki Asal</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td> Nama Pastor Kepala Paroki</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="text-center"><b>Kesehatan</b></h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Berat Badan</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td> Tinggi Badam</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td> Golongan Darah</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td>Mata Minus</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td>Mata Plus</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td> Mata Silinder</td>
+                                <td>: </td>
+                            </tr>
+                            <tr>
+                                <td>Imunisasi yang didapatkan</td>
+                                <td>: </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

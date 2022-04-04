@@ -1,0 +1,167 @@
+<template name="homeAdmin">
+    <div class="container">
+        {{>navbarAdmin  }}
+        <img class="logo-home" src="/img/logo_seminari.png" alt="Cek">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-judul">
+                    <h2 class="judul1">Selamat Datang di Sistem Informasi</h2>
+                    <h1 class="judul2">Seminari St. Vincentius A Paulo Garum</h1>
+                </div>
+                <a href="{{ pathFor route='gateKeeping' }}"><button class="btn btn-presensi btn-primary"
+                        id="cetak">Presensi Calon
+                        Seminaris</button></a>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="navbarAdmin">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <p class="mt-0 mb-0 text-white">Admin Seminari</p>
+            <a href="{{ pathFor route='menuAdmin' }}" class="btn btn-primary menu">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </div>
+    </nav>
+
+</template>
+
+<template name="navbar">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+
+            <a class="navbar-brand pull-left" onclick="history.back()" href="">Kembali</a>
+            <a class="navbar-brand" href="/">
+                Admin Seminari
+            </a>
+            <a href="{{ pathFor route='menuAdmin' }}" class="btn btn-primary menu">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </div>
+    </nav>
+
+</template>
+
+<template name="footer">
+    <!-- ../assets/dist/js/bootstrap.bundle.min.js -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+        </footer>
+    </div>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</template>
+
+<template name="menuAdmin">
+    {{>navbar}}
+    <div class="container">
+        <div class="row mt-5">
+
+            <!-- <div class="col-lg-12">
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Peserta
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Hasil Tes
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Input Hasil Tes
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Wawancara
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Input Jadwal Wawancara
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Daftar Pengguna
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <a class="btn btn-outline-primary mt-2 mb-2" href="{{ pathFor route='daftarSeminaris' }}">
+                        Tambah Pengguna
+                    </a>
+                </div>
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <button class="btn btn-danger btn-sm mt-2">Kembali</button>
+                </div>
+            </div> -->
+
+            <div class="col-lg-12">
+                <div class="table table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <b>PESERTA</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="text-decoration: none;" href="{{ pathFor route='daftarSeminaris' }}"><b>Daftar
+                                        Peserta</b></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>TES</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="text-decoration: none;" href="{{ pathFor route='daftarHasilTes' }}"><b>Daftar
+                                        Hasil Tes</b></a> <br>
+                                <a style="text-decoration: none;" href="{{ pathFor route='inputHasilTes' }}"><b>Input
+                                        Hasil Tes</b></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>WAWANCARA</b></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="text-decoration: none;" href="{{ pathFor route='tesWawancara' }}"><b>Daftar
+                                        Wawancara</b></a><br>
+                                <a style="text-decoration: none;" href="{{ pathFor route='inputWawancara' }}"><b>Input
+                                        Jawal Wawancara</b></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>PENGGUNA</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="text-decoration: none;" href=""><b>Daftar Pengguna</b></a><br>
+                                <a style="text-decoration: none;" href=""><b>Tambah Pengguna</b></a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

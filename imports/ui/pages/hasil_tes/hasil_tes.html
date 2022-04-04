@@ -1,0 +1,195 @@
+<template name="daftarHasilTes">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Daftar Hasil Calon Seminaris</h1>
+        <div class="row mt-4">
+            <div class="table table-responsive">
+                <a class="btn btn-warning btn-input mb-3" href="{{ pathFor route='inputHasilTes' }}">Input Hasil Tes</a>
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">No PSB</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Asal Paroki</th>
+                            <th scope="col">Akademis</th>
+                            <th scope="col">IQ</th>
+                            <th scope="col">Permintaan</th>
+                            <th scope="col">Kepribadian</th>
+                            <th scope="col">Kesehatan</th>
+                            <th scope="col">Wawancara</th>
+                            <th scope="col">Keputusan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr>1</tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <tr>1</tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><button class="btn btn-warning">Buat</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="inputHasilTes">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Input Hasil Tes</h1>
+        <form>
+            <div class="mb-4">
+                <label for="nama" class="form-label"><b>Nama Peserta</b></label>
+                <input type="text" class="form-control" name="nama">
+            </div>
+            <div class="mb-3">
+                <div class="table table-responsive">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Akademis</th>
+                                <th scope="col">IQ Psoki</th>
+                                <th scope="col">Peminatan</th>
+                                <th scope="col">Kepribadian</th>
+                                <th scope="col">Kesehatan</th>
+                                <th scope="col">Wawancara</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="agama" class="form-label"><b>Agama</b></label>
+                <input type="text" class="form-control" name="agama">
+            </div>
+            <div class="mb-3">
+                <label for="bhs_indo" class="form-label"><b>Bahasa Indonesia</b></label>
+                <input type="text" class="form-control" name="bhs_indo">
+            </div>
+            <div class="mb-3">
+                <label for="bhs_inggris" class="form-label"><b>Bahasa Inggris</b></label>
+                <input type="text" class="form-control" name="bhs_inggris">
+            </div>
+            <div class="mb-3">
+                <label for="matematika" class="form-label"><b>Matematika</b></label>
+                <input type="text" class="form-control" name="matematika">
+            </div>
+            <div class="mb-3">
+                <label for="peminatan" class="form-label"><b>Peminatan</b></label>
+                <input type="text" class="form-control" name="peminatan">
+            </div>
+            <button type="submit" class="btn btn-warning btn-input">Simpan</button>
+        </form>
+    </div>
+</template>
+
+<template name="tesWawancara">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Daftar Wawancara Calon Seminaris</h1>
+        <div class="row mt-4">
+            <div class="table table-responsive">
+                <a class="btn btn-warning btn-input mb-3" href="{{ pathFor route='inputPairing' }}">Buat Pairing</a>
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">No PSB</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Formator</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="inputPairing">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Input Pairings Wawancara</h1>
+        <form>
+            <div class="mb-3">
+                <label for="nama" class="form-label"><b>Nama Peserta</b></label>
+                <input type="text" class="form-control" name="nama">
+            </div>
+            <div class="mb-3">
+                <label for="formator" class="form-label"><b>Formator</b></label>
+                <input type="text" class="form-control" name="formator">
+            </div>
+            <div class="mb-3">
+                <label for="tanggal" class="form-label"><b>Tanggal</b></label>
+                <input type="date" class="form-control" name="tanggal">
+            </div>
+            <button type="submit" class="btn btn-warning btn-input">Simpan</button>
+        </form>
+    </div>
+</template>
+
+<template name="inputHasilWawancara">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Input Hasil Wawancara</h1>
+        <form>
+            <div class="mb-4">
+                <label for="keluarga" class="form-label"><b>Keluarga</b></label>
+                <textarea class="form-control" id="keluarga" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <div class="table table-responsive">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Akademis</th>
+                                <th scope="col">IQ Psoki</th>
+                                <th scope="col">Peminatan</th>
+                                <th scope="col">Kepribadian</th>
+                                <th scope="col">Kesehatan</th>
+                                <th scope="col">Wawancara</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="agama" class="form-label"><b>Agama</b></label>
+                <input type="text" class="form-control" name="agama">
+            </div>
+            <div class="mb-3">
+                <label for="bhs_indo" class="form-label"><b>Bahasa Indonesia</b></label>
+                <input type="text" class="form-control" name="bhs_indo">
+            </div>
+            <div class="mb-3">
+                <label for="bhs_inggris" class="form-label"><b>Bahasa Inggris</b></label>
+                <input type="text" class="form-control" name="bhs_inggris">
+            </div>
+            <div class="mb-3">
+                <label for="matematika" class="form-label"><b>Matematika</b></label>
+                <input type="text" class="form-control" name="matematika">
+            </div>
+            <div class="mb-3">
+                <label for="peminatan" class="form-label"><b>Peminatan</b></label>
+                <input type="text" class="form-control" name="peminatan">
+            </div>
+            <button type="submit" class="btn btn-warning btn-input">Simpan</button>
+        </form>
+    </div>
+</template>

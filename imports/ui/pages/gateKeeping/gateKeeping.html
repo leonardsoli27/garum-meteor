@@ -1,0 +1,38 @@
+<template name="gateKeeping">
+    {{>navbar}}
+    <div class="container">
+        <h1 class="text-center">Cek Kehadiran Calon Seminaris</h1>
+        <form class="form-cari">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Masukkan Nama atau Nomor PSB" name="psb_nama"
+                    required>
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </div>
+        </form>
+        {{#if daftarHadir }}
+        {{#each daftarHadir  }}
+        <div class="card card text-dark bg-light mb-3" style="max-width: 70rem;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h5 class="card-title">{{ name }}</h5>
+                        <p class="card-text">{{ address.street }}</p>
+                    </div>
+                    <div class="col-auto">
+                        {{#if kehadiran }}
+                        <span class="mt-3 badge rounded-pill bg-success">Success</span>
+                        {{ else }}
+                        <form class="form-hadir">
+                            <input type="hidden" value="{{ _id }}" name="id_seminaris">
+                            <button type="submit" class="btn btn-primary mt-2">Hadir</button>
+                        </form>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{ else }}
+        {{/if  }}
+    </div>
+</template>
